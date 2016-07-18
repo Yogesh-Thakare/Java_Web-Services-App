@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://DefaultNamespace" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://DefaultNamespace" xmlns:intf="http://DefaultNamespace" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://DefaultNamespace" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="createNRecord">
+    <complexType>
+     <sequence>
+      <element name="managerID" type="xsd:string"/>
+      <element name="firstName" type="xsd:string"/>
+      <element name="lastName" type="xsd:string"/>
+      <element name="designation" type="xsd:string"/>
+      <element name="status" type="xsd:string"/>
+      <element name="statusDate" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="createNRecordResponse">
+    <complexType>
+     <sequence>
+      <element name="createNRecordReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getRecordCounts">
+    <complexType>
+     <sequence>
+      <element name="managerID" type="xsd:string"/>
+      <element name="recordType" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getRecordCountsResponse">
+    <complexType>
+     <sequence>
+      <element name="getRecordCountsReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="createDRecord">
+    <complexType>
+     <sequence>
+      <element name="managerID" type="xsd:string"/>
+      <element name="firstName" type="xsd:string"/>
+      <element name="lastName" type="xsd:string"/>
+      <element name="address" type="xsd:string"/>
+      <element name="phone" type="xsd:string"/>
+      <element name="specialization" type="xsd:string"/>
+      <element name="location" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="createDRecordResponse">
+    <complexType>
+     <sequence>
+      <element name="createDRecordReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="editRecord">
+    <complexType>
+     <sequence>
+      <element name="managerID" type="xsd:string"/>
+      <element name="recordID" type="xsd:string"/>
+      <element name="fieldName" type="xsd:string"/>
+      <element name="newValue" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="editRecordResponse">
+    <complexType>
+     <sequence>
+      <element name="editRecordReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="transferRecord">
+    <complexType>
+     <sequence>
+      <element name="managerID" type="xsd:string"/>
+      <element name="recordID" type="xsd:string"/>
+      <element name="remoteClinic" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="transferRecordResponse">
+    <complexType>
+     <sequence>
+      <element name="transferRecordReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="deleteRecordFromServer">
+    <complexType>
+     <sequence>
+      <element name="recordID" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="deleteRecordFromServerResponse">
+    <complexType>
+     <sequence>
+      <element name="deleteRecordFromServerReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="createNRecordRequest">
+
+      <wsdl:part element="impl:createNRecord" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="createDRecordRequest">
+
+      <wsdl:part element="impl:createDRecord" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="createNRecordResponse">
+
+      <wsdl:part element="impl:createNRecordResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="createDRecordResponse">
+
+      <wsdl:part element="impl:createDRecordResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="deleteRecordFromServerResponse">
+
+      <wsdl:part element="impl:deleteRecordFromServerResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getRecordCountsResponse">
+
+      <wsdl:part element="impl:getRecordCountsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="editRecordResponse">
+
+      <wsdl:part element="impl:editRecordResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="editRecordRequest">
+
+      <wsdl:part element="impl:editRecord" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="transferRecordRequest">
+
+      <wsdl:part element="impl:transferRecord" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="transferRecordResponse">
+
+      <wsdl:part element="impl:transferRecordResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="deleteRecordFromServerRequest">
+
+      <wsdl:part element="impl:deleteRecordFromServer" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getRecordCountsRequest">
+
+      <wsdl:part element="impl:getRecordCounts" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Server">
+
+      <wsdl:operation name="createNRecord">
+
+         <wsdl:input message="impl:createNRecordRequest" name="createNRecordRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:createNRecordResponse" name="createNRecordResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getRecordCounts">
+
+         <wsdl:input message="impl:getRecordCountsRequest" name="getRecordCountsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getRecordCountsResponse" name="getRecordCountsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="createDRecord">
+
+         <wsdl:input message="impl:createDRecordRequest" name="createDRecordRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:createDRecordResponse" name="createDRecordResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="editRecord">
+
+         <wsdl:input message="impl:editRecordRequest" name="editRecordRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:editRecordResponse" name="editRecordResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="transferRecord">
+
+         <wsdl:input message="impl:transferRecordRequest" name="transferRecordRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:transferRecordResponse" name="transferRecordResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deleteRecordFromServer">
+
+         <wsdl:input message="impl:deleteRecordFromServerRequest" name="deleteRecordFromServerRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:deleteRecordFromServerResponse" name="deleteRecordFromServerResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ServerSoapBinding" type="impl:Server">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="createNRecord">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="createNRecordRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="createNRecordResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getRecordCounts">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getRecordCountsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getRecordCountsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="createDRecord">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="createDRecordRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="createDRecordResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="editRecord">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="editRecordRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="editRecordResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="transferRecord">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="transferRecordRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="transferRecordResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deleteRecordFromServer">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="deleteRecordFromServerRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="deleteRecordFromServerResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ServerService">
+
+      <wsdl:port binding="impl:ServerSoapBinding" name="Server">
+
+         <wsdlsoap:address location="http://localhost:8080/Ass3_web_services/services/Server"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
